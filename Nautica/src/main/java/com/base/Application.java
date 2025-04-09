@@ -48,14 +48,14 @@ public class Application {
                 System.out.println("No se encontró el barco para actualizar.");
             }
             
-            //Eliminar todos los barcos en el amarre 8
-            
+            //Eliminar todos los barcos en el amarre 9
             barcoService.findAll().forEach(barco -> {
                 if ("9".equals(barco.getAmarre())) {
                     barcoService.deleteByAmarre(barco.getAmarre());
                     System.out.println("Barco eliminado: " + barco.getNombre() + " en el amarre " + barco.getAmarre());
                 }
             });
+            
             
            
         };

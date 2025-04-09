@@ -45,7 +45,15 @@ public class socios {
     public List<barco> getBarcos() {
         return barcos;
     }
-    public void setBarcos(List<barco> barcos) {
+    public socios(
+			@NotBlank(message = "El nombre no puede estar vacío") @Size(max = 30, message = "El nombre no puede tener más de 30 caracteres") String nombre,
+			@NotBlank(message = "El apellido no puede estar vacío") @Size(max = 30, message = "El apellido no puede tener más de 30 caracteres") String apellido,
+			@NotBlank(message = "El email no puede estar vacío") @Email(message = "Debe ser un email válido") @Size(max = 50, message = "El email no puede tener más de 50 caracteres") String email) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.email = email;
+	}
+	public void setBarcos(List<barco> barcos) {
         this.barcos = barcos;
     }
     public Long getId_socios() {
@@ -54,7 +62,9 @@ public class socios {
     public void setId_socios(Long id_socios) {
         this.id_socios = id_socios;
     }
-    public String getNombre() {
+    public socios() {
+	}
+	public String getNombre() {
         return nombre;
     }
     public void setNombre(String nombre) {
@@ -72,4 +82,4 @@ public class socios {
     public void setEmail(String email) {
         this.email = email;
     }
-}
+}	

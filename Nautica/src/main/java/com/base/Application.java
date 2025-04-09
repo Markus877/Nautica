@@ -10,12 +10,12 @@ import com.base.service.barco_service;
 import com.base.service.salida_service;
 import com.base.service.socios_service;
 
+
 import javax.sql.DataSource;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.base")
 public class Application {
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

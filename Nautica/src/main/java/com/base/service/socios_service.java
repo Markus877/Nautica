@@ -19,7 +19,7 @@ public class socios_service {
         return socios_repository.findAll();
     }
 
-    public Optional<socios> findById(String id) {
+    public Optional<socios> findById(Long id) {
         return socios_repository.findById(id);
     }
 
@@ -32,7 +32,7 @@ public class socios_service {
     }
 
     
-    public void deleteById(String id) {
+    public void deleteById(Long id) {
     	socios_repository.deleteById(id);
     }
 }

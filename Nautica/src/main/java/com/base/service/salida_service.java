@@ -19,7 +19,7 @@ public class salida_service {
         return salida_repository.findAll();
     }
 
-    public Optional<salida> findById(String id) {
+    public Optional<salida> findById(Long id) {
         return salida_repository.findById(id);
     }
 
@@ -31,7 +31,7 @@ public class salida_service {
         return salida_repository.save(salida);
     }
 
-    public void deleteById(String id) {
+    public void deleteById(Long id) {
     	salida_repository.deleteById(id);
     }
 }

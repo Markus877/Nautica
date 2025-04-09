@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.base.model.socios;
 
 @Repository
-public interface socios_repository extends JpaRepository<socios, String> {
+public interface socios_repository extends JpaRepository<socios, Long> {
 }

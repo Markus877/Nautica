@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.base.model.salida;
 
 @Repository
-public interface salida_repository extends JpaRepository<salida, String> {
+public interface salida_repository extends JpaRepository<salida, Long> {
 }

@@ -56,6 +56,9 @@ public class Application {
                     System.out.println("Barco eliminado: " + barco.getNombre() + " en el amarre " + barco.getAmarre());
                 }
             });
+            
+            barcoService.findAll().forEach(barco -> System.out.println(barco.getNombre() + " id=" + barco.getId_barco()+ " matricula="+barco.getMatricula()+" amarre="+barco.getAmarre()+" cuota=" + barco.getCuota()+" socio="+barco.getId_barco()));
+
         };
     }
 }

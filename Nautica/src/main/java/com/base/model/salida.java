@@ -28,14 +28,14 @@ public class salida {
     @PastOrPresent(message = "La fecha debe ser en el pasado o presente")
     private Date fecha;
 
-    @Column(length = 255)
+    @Column(length = 30)
     @NotBlank(message = "El destino no puede estar vacío")
-    @Size(max = 255, message = "El destino no puede tener más de 255 caracteres")
+    @Size(max = 30, message = "El destino no puede tener más de 30 caracteres")
     private String destino;
 
-    @Column(length = 255)
+    @Column(length = 50)
     @NotBlank(message = "Los datos del patrón no pueden estar vacíos")
-    @Size(max = 255, message = "Los datos del patrón no pueden tener más de 255 caracteres")
+    @Size(max = 50, message = "Los datos del patrón no pueden tener más de 50 caracteres")
     private String datos_patron;
 
     @ManyToOne

@@ -22,20 +22,20 @@ public class socios {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_socios;
 
-    @Column(length = 255)
+    @Column(length = 30)
     @NotBlank(message = "El nombre no puede estar vacío")
-    @Size(max = 255, message = "El nombre no puede tener más de 255 caracteres")
+    @Size(max = 30, message = "El nombre no puede tener más de 30 caracteres")
     private String nombre;
 
-    @Column(length = 255)
+    @Column(length = 30)
     @NotBlank(message = "El apellido no puede estar vacío")
-    @Size(max = 255, message = "El apellido no puede tener más de 255 caracteres")
+    @Size(max = 30, message = "El apellido no puede tener más de 30 caracteres")
     private String apellido;
 
-    @Column(length = 255)
+    @Column(length = 50)
     @NotBlank(message = "El email no puede estar vacío")
     @Email(message = "Debe ser un email válido")
-    @Size(max = 255, message = "El email no puede tener más de 255 caracteres")
+    @Size(max = 50, message = "El email no puede tener más de 50 caracteres")
     private String email;
 
     @OneToMany(mappedBy = "socios", cascade = CascadeType.ALL)

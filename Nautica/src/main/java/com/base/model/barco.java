@@ -25,19 +25,19 @@ public class barco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_barco;
 
-    @Column(name="matricula", length = 255)
+    @Column(name="matricula", length = 30)
     @NotBlank(message = "La matrícula no puede estar vacía")
-    @Size(max = 255, message = "La matrícula no puede tener más de 255 caracteres")
+    @Size(max = 30, message = "La matrícula no puede tener más de 30 caracteres")
     private String matricula;
 
-    @Column(name="nombre", length = 255)
+    @Column(name="nombre", length = 30)
     @NotBlank(message = "El nombre no puede estar vacío")
-    @Size(max = 255, message = "El nombre no puede tener más de 255 caracteres")
+    @Size(max = 30, message = "El nombre no puede tener más de 30 caracteres")
     private String nombre;
 
-    @Column(name="amarre", length = 255)
+    @Column(name="amarre", length = 30)
     @NotBlank(message = "El amarre no puede estar vacío")
-    @Size(max = 255, message = "El amarre no puede tener más de 255 caracteres")
+    @Size(max = 30, message = "El amarre no puede tener más de 30 caracteres")
     private String amarre;
 
     @Column(name="cuota")

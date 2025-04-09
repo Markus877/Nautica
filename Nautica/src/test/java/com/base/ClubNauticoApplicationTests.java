@@ -53,7 +53,7 @@ public class ClubNauticoApplicationTests {
         CommandLineRunner runner = application.init(barcoService, sociosService, salidaService, null);
         runner.run();
 
-        verify(barcoService, times(2)).findAll();  // Ajustado para permitir 2 invocaciones
+        verify(barcoService, times(2)).findAll();
         verify(barcoService, times(2)).getBarcoPorNombre("BarcoUno");
     }
 
@@ -65,7 +65,7 @@ public class ClubNauticoApplicationTests {
         CommandLineRunner runner = application.init(barcoService, sociosService, salidaService, null);
         runner.run();
 
-        verify(barcoService, times(2)).findAll();  // Ajustado para permitir 2 invocaciones
+        verify(barcoService, times(2)).findAll(); 
         verify(barcoService, times(2)).getBarcoPorNombre("BarcoUno");
     }
 

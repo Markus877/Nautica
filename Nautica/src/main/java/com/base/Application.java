@@ -27,8 +27,8 @@ public class Application {
             
         	// Imprimir todos los barcos, socios y salidas
             barcoService.findAll().forEach(barco -> System.out.println(barco.getNombre() + " id=" + barco.getId_barco()+ " matricula="+barco.getMatricula()+" amarre="+barco.getAmarre()+" cuota=" + barco.getCuota()+" socio="+barco.getId_barco()));
-            socios_service.findAll().forEach(barco -> System.out.println("Hola!! Yo soy "+barco.getNombre()+" "+barco.getApellido()+" y mi email es " + barco.getEmail()));
-            salida_service.findAll().forEach(barco -> System.out.println(barco.getFecha()));
+            socios_service.findAll().forEach(socio -> System.out.println("Hola!! Yo soy "+socio.getNombre()+" "+socio.getApellido()+" y mi email es " + socio.getEmail()));
+            salida_service.findAll().forEach(salida -> System.out.println(salida.getFecha()+" Destino="+salida.getDestino()+" datos_patron="+salida.getDatos_patron()));
             
             //Con JPQL busca un barco y te dice si lo encuentra o no
             barco barcoEncontrado = barcoService.getBarcoPorNombre("BarcoUno");
@@ -38,7 +38,7 @@ public class Application {
                 System.out.println("No se encontró ningún barco con el nombre especificado.");
             }
             
-            //Modificar la cuota de un barco
+            //Con JPQL modifica la cuota de un barco
             barco barcoParaActualizar = barcoService.getBarcoPorNombre("BarcoUno");
             if (barcoParaActualizar != null) {
                 barcoParaActualizar.setCuota(1500);
@@ -51,14 +51,13 @@ public class Application {
             //Eliminar todos los barcos en el amarre 8
             
             barcoService.findAll().forEach(barco -> {
-                if ("8".equals(barco.getAmarre())) {
+                if ("9".equals(barco.getAmarre())) {
                     barcoService.deleteByAmarre(barco.getAmarre());
                     System.out.println("Barco eliminado: " + barco.getNombre() + " en el amarre " + barco.getAmarre());
                 }
             });
             
-            barcoService.findAll().forEach(barco -> System.out.println(barco.getNombre() + " id=" + barco.getId_barco()+ " matricula="+barco.getMatricula()+" amarre="+barco.getAmarre()+" cuota=" + barco.getCuota()+" socio="+barco.getId_barco()));
-
+           
         };
     }
 }

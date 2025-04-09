@@ -34,4 +34,10 @@ public class salida_service {
     public void deleteById(Long id) {
     	salida_repository.deleteById(id);
     }
+    
+    public void deleteByBarcoIds(Long id) {
+    	salida_repository.deleteByBarcoIds(id);
+    }
+
+
 }

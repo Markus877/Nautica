@@ -1,5 +1,6 @@
 package com.base.repository;
 
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -12,14 +13,15 @@ import jakarta.transaction.Transactional;
 
 @Repository
 public interface barco_repository extends JpaRepository<barco, Long> {
-	
-	@Query("select b from barco b where b.nombre= :nombre")
-	barco getNombres(String nombre);
+    
+    @Query("select b from barco b where b.nombre= :nombre")
+    barco getNombres(String nombre);
 
-	@Transactional 
+    @Transactional 
     @Modifying
     @Query("DELETE FROM barco b WHERE b.amarre = ?1")
     void deleteByAmarre(String amarre);
 
-
+    @Query("SELECT b.id_barco FROM barco b WHERE b.amarre = ?1")
+    List<Long> getIdByAmarre(String amarre);
 }

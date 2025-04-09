@@ -1,6 +1,7 @@
 package com.base.service;
 
 import java.util.List;
+import com.base.repository.*;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,10 @@ public class barco_service {
 
     @Autowired
     private barco_repository barco_repository;
-
+    
+    @Autowired
+    private salida_service salida_service;
+    
     /*public static boolean getBarcosPorNombre(String nombre) {
         return com.base.repository.barco_repository.findByNombre(nombre);
     }*/
@@ -40,6 +44,8 @@ public class barco_service {
     }
 
     public void deleteByAmarre(String amarre) {
+    	List<Long> ids=barco_repository.getIdByAmarre(amarre);
+    	ids.forEach(id -> salida_service.deleteByBarcoIds(id));
         barco_repository.deleteByAmarre(amarre);
     }
 

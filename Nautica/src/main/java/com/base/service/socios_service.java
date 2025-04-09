@@ -30,7 +30,7 @@ public class socios_service {
     public socios update(socios socio) {
         return socios_repository.save(socio);
     }
-
+    
     
     public void deleteById(Long id) {
     	socios_repository.deleteById(id);

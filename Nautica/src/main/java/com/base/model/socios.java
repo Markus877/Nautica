@@ -52,7 +52,7 @@ public class socios {
         return id_socios;
     }
     public void setId_socios(Long id_socios) {
-        this.id_soc_socios = id_socios;
+        this.id_socios = id_socios;
     }
     public String getNombre() {
         return nombre;

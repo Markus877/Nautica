@@ -10,6 +10,7 @@ import com.base.service.barco_service;
 import com.base.service.salida_service;
 import com.base.service.socios_service;
 
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -56,7 +57,13 @@ public class Application {
                 }
             });
             
-            
+
+
+         // Usar Criteria para buscar barcos
+         List<barco> barcos = barcoService.findBarcosByCriteria("El Navegante", "ABC123", "5");
+         barcos.forEach(barco -> System.out.println("Id del barco encontrado con Criteria: " + barco.getId_barco()));
+
+
            
         };
     }
